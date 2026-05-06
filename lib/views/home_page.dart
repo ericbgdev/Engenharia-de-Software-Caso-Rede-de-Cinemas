@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'sessao_list_page.dart';
 
-// Tela inicial do app — apresenta o cinema e navega para as sessões
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -15,7 +14,6 @@ class HomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Ícone de cinema
               const Icon(Icons.local_movies, color: Colors.amber, size: 80),
               const SizedBox(height: 24),
 
@@ -41,7 +39,6 @@ class HomePage extends StatelessWidget {
               ),
               const SizedBox(height: 48),
 
-              // Botão para ver sessões
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton.icon(
