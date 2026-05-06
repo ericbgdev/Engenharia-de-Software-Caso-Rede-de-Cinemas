@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../controllers/sessao_controller.dart';
 import '../models/sessao.dart';
 
-// Tela que exibe a lista de sessões disponíveis
 class SessaoListPage extends StatefulWidget {
   const SessaoListPage({super.key});
 
@@ -16,7 +15,6 @@ class _SessaoListPageState extends State<SessaoListPage> {
   List<Sessao> _sessoes = [];
   bool _carregando = true;
 
-  // Filtro de sala: 0 = todas, 1 = sala 1, 2 = sala 2
   int _filtroSala = 0;
 
   @override
@@ -90,7 +88,6 @@ class _SessaoListPageState extends State<SessaoListPage> {
     );
   }
 
-  // Botões de filtro por sala
   Widget _buildFiltroSalas() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -131,9 +128,7 @@ class _SessaoListPageState extends State<SessaoListPage> {
     );
   }
 
-  // Card individual de cada sessão
   Widget _buildCardSessao(Sessao sessao) {
-    // Cor da tag de gênero (visual simples)
     Color corGenero = sessao.generoFilme!.contains('Ação')
         ? Colors.red.shade700
         : Colors.teal.shade600;
@@ -150,7 +145,6 @@ class _SessaoListPageState extends State<SessaoListPage> {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Coluna esquerda: horário + sala
             Column(
               children: [
                 Text(
@@ -177,7 +171,6 @@ class _SessaoListPageState extends State<SessaoListPage> {
               ],
             ),
             const SizedBox(width: 16),
-            // Coluna direita: infos do filme
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -191,7 +184,6 @@ class _SessaoListPageState extends State<SessaoListPage> {
                     ),
                   ),
                   const SizedBox(height: 4),
-                  // Tag de gênero
                   Container(
                     padding:
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
