@@ -1,17 +1,12 @@
-// Model que representa uma sessão de cinema
-// Inclui dados do filme (resultado do JOIN no banco)
 class Sessao {
   final int? id;
   final int filmeId;
-  final int sala;       // 1 ou 2
-  final String horario; // Ex: "14:00"
-
-  // Campos do filme (preenchidos via JOIN)
+  final int sala;
+  final String horario;
   final String? tituloFilme;
   final String? generoFilme;
   final String? descricaoFilme;
   final int? duracaoFilme;
-
   Sessao({
     this.id,
     required this.filmeId,
@@ -22,8 +17,6 @@ class Sessao {
     this.descricaoFilme,
     this.duracaoFilme,
   });
-
-  // Para salvar no banco (só os campos da tabela sessoes)
   Map<String, dynamic> toMap() {
     return {
       'id': id,
@@ -32,8 +25,6 @@ class Sessao {
       'horario': horario,
     };
   }
-
-  // Para ler do banco com JOIN (inclui dados do filme)
   factory Sessao.fromMap(Map<String, dynamic> map) {
     return Sessao(
       id: map['id'],
