@@ -1,0 +1,49 @@
+<svg width="680" height="520" viewBox="0 0 680 520" xmlns="http://www.w3.org/2000/svg" font-family="monospace">
+
+  <!-- Fundo -->
+  <rect width="680" height="520" fill="#0d1117"/>
+
+  <!-- Barra topo -->
+  <rect x="0" y="0" width="680" height="6" fill="#f0a500"/>
+
+  <!-- Título -->
+  <text x="40" y="60" font-size="22" font-weight="bold" fill="#f0a500">🎬 Cine São João</text>
+  <text x="40" y="84" font-size="13" fill="#8b949e">Sistema de Consulta de Sessões — Flutter + SQLite</text>
+
+  <!-- Divisor -->
+  <line x1="40" y1="100" x2="640" y2="100" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Aluno -->
+  <text x="40" y="130" font-size="12" fill="#8b949e">Aluno</text>
+  <text x="40" y="150" font-size="15" fill="#e6edf3">Eric Butzloff Gudera</text>
+  <text x="40" y="170" font-size="13" fill="#8b949e">RA: 25001129</text>
+
+  <!-- Curso -->
+  <text x="40" y="200" font-size="12" fill="#8b949e">Curso</text>
+  <text x="40" y="220" font-size="15" fill="#e6edf3">Análise e Desenvolvimento de Sistemas — 2º Ano</text>
+  <text x="40" y="240" font-size="13" fill="#8b949e">Engenharia de Software</text>
+
+  <!-- Divisor -->
+  <line x1="40" y1="260" x2="640" y2="260" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Arquitetura -->
+  <text x="40" y="288" font-size="13" font-weight="bold" fill="#f0a500">Arquitetura</text>
+  <text x="40" y="312" font-size="13" fill="#e6edf3">MVC + Service + Repository + SQLite</text>
+
+  <!-- Estrutura de pastas -->
+  <text x="40" y="344" font-size="13" font-weight="bold" fill="#f0a500">Estrutura</text>
+
+  <text x="40"  y="366" font-size="12" fill="#8b949e">lib/</text>
+  <text x="56"  y="384" font-size="12" fill="#e6edf3">├── models/        filme.dart · sessao.dart</text>
+  <text x="56"  y="400" font-size="12" fill="#e6edf3">├── views/         home_page.dart · sessao_list_page.dart</text>
+  <text x="56"  y="416" font-size="12" fill="#e6edf3">├── controllers/   sessao_controller.dart</text>
+  <text x="56"  y="432" font-size="12" fill="#e6edf3">├── services/      database_service.dart</text>
+  <text x="56"  y="448" font-size="12" fill="#e6edf3">└── repositories/  sessao_repository.dart</text>
+
+  <!-- Divisor -->
+  <line x1="40" y1="464" x2="640" y2="464" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Como rodar -->
+  <text x="40" y="488" font-size="12" fill="#8b949e">$ flutter pub get   →   $ flutter run</text>
+
+</svg>
