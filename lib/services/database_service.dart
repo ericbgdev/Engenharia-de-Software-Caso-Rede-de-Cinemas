@@ -1,11 +1,8 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
-// Serviço responsável por criar, configurar e popular o banco de dados SQLite
 class DatabaseService {
   static Database? _database;
-
-  // Singleton: retorna a mesma instância do banco para todo o app
   Future<Database> get database async {
     if (_database != null) return _database!;
     _database = await _initDatabase();
@@ -13,7 +10,6 @@ class DatabaseService {
   }
 
   Future<Database> _initDatabase() async {
-    // Caminho onde o SQLite vai salvar o arquivo
     String caminho = join(await getDatabasesPath(), 'cinema.db');
 
     return await openDatabase(
@@ -22,10 +18,7 @@ class DatabaseService {
       onCreate: _criarTabelas,
     );
   }
-
-  // Cria as tabelas e insere os dados iniciais
   Future<void> _criarTabelas(Database db, int version) async {
-    // Tabela de filmes
     await db.execute('''
       CREATE TABLE filmes (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -35,8 +28,6 @@ class DatabaseService {
         descricao TEXT NOT NULL
       )
     ''');
-
-    // Tabela de sessões (FK para filmes)
     await db.execute('''
       CREATE TABLE sessoes (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -46,13 +37,10 @@ class DatabaseService {
         FOREIGN KEY (filme_id) REFERENCES filmes(id)
       )
     ''');
-
-    // Popular com dados iniciais
     await _inserirDadosIniciais(db);
   }
 
   Future<void> _inserirDadosIniciais(Database db) async {
-    // Inserir os 3 filmes
     await db.rawInsert('''
       INSERT INTO filmes (titulo, genero, duracao_minutos, descricao)
       VALUES ('Deadpool 3', 'Ação/Comédia', 130,
@@ -70,9 +58,6 @@ class DatabaseService {
       VALUES ('Meu Malvado Favorito 4', 'Animação/Comédia', 95,
         'Gru enfrenta um novo vilão enquanto tenta equilibrar a vida de pai de família com o universo do crime.')
     ''');
-
-    // Inserir as sessões
-    // Sala 1
     await db.rawInsert("INSERT INTO sessoes (filme_id, sala, horario) VALUES (3, 1, '10:00')"); // Malvado Favorito 4
     await db.rawInsert("INSERT INTO sessoes (filme_id, sala, horario) VALUES (1, 1, '14:00')"); // Deadpool 3
     await db.rawInsert("INSERT INTO sessoes (filme_id, sala, horario) VALUES (1, 1, '18:30')"); // Deadpool 3
